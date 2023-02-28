@@ -1,17 +1,17 @@
 cmake_minimum_required(VERSION 3.24)
-set(PROJECT_NAME SFMLDiscovery)
+set(PROJECT_NAME SFML_N-body-PB_Solver)
 project(${PROJECT_NAME} VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(SFMLDiscovery main.cpp)
+add_executable(SFML_N-body-PB_Solver main.cpp)
 
 set(SFML_ROOT c:/SFML)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 find_package(SFML REQUIRED system window graphics network audio)
 if (SFML_FOUND)
     include_directories(${SFML_INCLUDE_DIR})
-    target_link_libraries(SFMLDiscovery ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+    target_link_libraries(${PROJECT_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 endif()
 
 if(WIN32)
